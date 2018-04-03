@@ -7,16 +7,16 @@ The socketserver module simplifies the task of writing network servers.
 import os
 import json
 import socketserver
-from .config import getConfig
-from .mytools import Walk, get_current_time
-from .graph import Database
+from chat.config import getConfig
+from chat.mytools import Walk, get_current_time
+from chat.graph import Database
 # from .sql import Database
 # from .qa_sql import Robot
-from .ianswer import answer2xml
-from .qa import Robot
+from chat.ianswer import answer2xml
+from chat.qa import Robot
 
 
-kb = Database()
+kb = Database(password=getConfig("neo4j", "password"))
 
 class WalkUserData(Walk):
     def handle_file(self, filepath, pattern=None):

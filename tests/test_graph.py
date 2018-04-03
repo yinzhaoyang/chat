@@ -13,7 +13,7 @@ class WalkUserData(Walk):
 
 class TestMe(TestCase):
     def setUp(self):
-        self.database = Database(password="train", userid="A0001")
+        self.database = Database(password="123456", userid="neo4j")
         
     def test_add_userdata(self):
         """Add userdata from usb.
